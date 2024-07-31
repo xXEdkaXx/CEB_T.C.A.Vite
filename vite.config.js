@@ -5,7 +5,6 @@ import htmlPurge from 'vite-plugin-purgecss';
 import path, { resolve } from "node:path";
 import handlebars from 'vite-plugin-handlebars';
 import getPageContext from './js';
-import handlerBarsContext from './variables.js';
 
 export default defineConfig(
     {
