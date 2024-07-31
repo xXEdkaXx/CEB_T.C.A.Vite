@@ -1,0 +1,16 @@
+{{#each tipoBiblioteca}}
+<div class="box_conteiner left-aligned-box" id="{{name}}">
+    <a href="{{src}}" target="_blank">
+        <h3>{{name}}</h3>
+    </a>
+    <p class="parrafo">{{desc}}
+    </p>
+    <section class="image-container">
+        {{#filtrarPorTipo ../bibliotecaImg name}}
+        <div class="image">
+            <img src="{{src}}" alt="alt" />
+        </div>
+        {{/filtrarPorTipo}}
+    </section>
+</div>
+{{/each}}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../less/estilos.less" />
+    <script type="text/javascript" src="../js/nav.js"></script>
+    <title>{{title}}</title>
+    <link rel="icon" href="{{logo}}" type="image/x-icon">
+</head>
+
+<body>
+    {{>header}}
+    <main>
+        <div class="contenedor">
+            <form>
+                <h2 class="title">Información Personal</h2>
+                <p></p>
+                <div class="presencial">
+                    <h3>Matrícula Presencial</h3>
+                    <label for="nombrePresencial">Nombre del padre, madre o encargado:</label>
+                    <input type="text" id="nombrePresencial" name="nombrePresencial" required>
+
+                    <label for="apellidosPresencial">Apellidos del padre, madre o encargado:</label>
+                    <input type="text" id="apellidosPresencial" name="apellidosPresencial" required>
+
+                    <label for="nombreAlumno">Nombre del Alumno(a):</label>
+                    <input type="text" id="nombreAlumno" name="nombreAlumno" required>
+
+                    <label for="apellidosAlumno">Apellidos del Alumno(a):</label>
+                    <input type="text" id="apellidosAlumno" name="apellidosAlumno" required>
+
+                    <label for="escuela">Escuela o centros básicos:</label>
+                    <select id="escuela" name="escuela" title="Seleccione la escuela o centro básico">
+                        <option value="">Seleccione la escuela</option>
+                        <option value="cebJose">Ceb José Cecilio del valle</option>
+                        <option value="jfk">Jhon F. Kennedy</option>
+                        <option value="goldMedal">Gold Medal School</option>
+                        <option value="otras">Otras escuelas</option>
+                    </select>
+
+                    <div class="contenedor">
+                        <script>
+                            function actualizarDias() {
+                                const mesSeleccionado = document.getElementById("mes").value;
+                                const diaSelect = document.getElementById("dia");
+
+                                diaSelect.innerHTML = "";
+
+                                let numeroDias = 31;
+                                if (["04", "06", "09", "11"].includes(mesSeleccionado)) {
+                                    numeroDias = 30;
+                                } else if (mesSeleccionado === "02") {
+                                    const anioSeleccionado = parseInt(document.getElementById("anio").value);
+                                    numeroDias = (anioSeleccionado % 4 === 0 && (anioSeleccionado % 100 !== 0 || anioSeleccionado % 400 === 0)) ? 29 : 28;
+                                }
+
+                                for (let i = 1; i <= numeroDias; i++) {
+                                    diaSelect.innerHTML += `<option value="${i}">${i}</option>`;
+                                }
+                            }
+                        </script>
+                        <form>
+                            <h2>Selecciona una Fecha</h2>
+                            <div>
+                                <label for="anio">Año:</label>
+                                <select id="anio" name="anio" title="Seleccione el año">
+                                    <option value="2023">2024</option>
+                                    <option value="2024">2025</option>
+                                    <option value="2025">2026</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="mes">Mes:</label>
+                                <select id="mes" name="mes" onchange="actualizarDias()" title="Seleccione el mes">
+                                    <option value="01">Enero</option>
+                                    <option value="02">Febrero</option>
+                                    <option value="03">Marzo</option>
+                                    <option value="04">Abril</option>
+                                    <option value="05">Mayo</option>
+                                    <option value="06">Junio</option>
+                                    <option value="07">Julio</option>
+                                    <option value="08">Agosto</option>
+                                    <option value="09">Septiembre</option>
+                                    <option value="10">Octubre</option>
+                                    <option value="11">Noviembre</option>
+                                    <option value="12">Diciembre</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="dia">Día:</label>
+                                <select id="dia" name="dia" title="Seleccione el día">
+                                    <option value="01">1</option>
+                                    <option value="02">2</option>
+                                    <option value="03">3</option>
+                                    <option value="04">4</option>
+                                    <option value="05">5</option>
+                                    <option value="06">6</option>
+                                    <option value="07">7</option>
+                                    <option value="08">8</option>
+                                    <option value="09">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select>
+                            </div>
+                            <button type="submit">Seleccionar Fecha</button>
+                        </form>
+                    </div>
+
+                    <label for="email">Correo Electrónico del encargado:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <h2>Modalidad de Matrícula</h2>
+                    <select id="modalidadMatricula" name="modalidadMatricula"
+                        title="Seleccione la modalidad de matrícula">
+                        <option value="virtual">Virtual</option>
+                        <option value="virtual">Presencial</option>
+                    </select>
+
+                    <button type="submit">Enviar Matrícula</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    {{>footer}}
+</body>
+
+</html>

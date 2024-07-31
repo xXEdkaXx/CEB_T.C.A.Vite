@@ -1,0 +1,13 @@
+{{#each tipoQuines}}
+<div class="box_conteiner" id="{{name}}">
+    <h2 class="titulos">{{name}}</h2>
+    <p class="parrafo">{{parrafo}} </p>
+    <section class="image-container">
+        {{#filtrarPorTipo ../quienesImg name}}
+        <div class="image">
+            <img src="{{src}}" alt="{{alt}}">
+        </div>
+        {{/filtrarPorTipo}}
+    </section>
+</div>
+{{/each}}

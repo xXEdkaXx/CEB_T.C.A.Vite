@@ -1,0 +1,19 @@
+<section>
+    {{#each TipoPropuesta}}
+    <div id="{{name}}">
+        <div class="box_conteiner">
+            <h2 class="titulo">{{name}}</h2>
+            <p class="parrafo">{{descip}}</p>
+        </div>
+
+        <section class="image-container">
+            {{#filtrarPorTipo ../propuestaImg name}}
+            <div class="image">
+                <img src="{{src}}" alt="{{alt}}" />
+            </div>
+            {{/filtrarPorTipo}}
+        </section>
+
+    </div>
+    {{/each}}
+</section>

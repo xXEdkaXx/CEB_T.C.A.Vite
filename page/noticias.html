@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-AU-Compatible" content="Ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" href="../CentroBasico/imagenes/Logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../less/estilos.less" />
+    <script type="text/javascript" src="../js/nav.js"></script>
+</head>
+
+<body>
+    {{>header}}
+    <main style="padding: 20px;">
+        <h1 class="titulos">Noticias</h1>
+        <div class="card-container">
+            {{>noticias}}
+        </div>
+    </main>
+    {{>footer}}
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-AU-Compatible" content="Ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" href="{{logo}}" type="image/x-icon">
+    <link rel="stylesheet" href="../less/estilos.less" />
+    <script type="text/javascript" src="../js/nav.js"></script>
+</head>
+
+<body>
+    {{>header}}
+    <main>
+        <section class="contenedor">
+            <div class="box_conteiner">
+                {{>cardAcerca}}
+                <section class="image-container">
+                    {{>cardAcercaImg}}
+                </section>
+                <p class="parrafo">
+                    El patronato, junto con la comunidad, inició la construcción del nuevo edificio, que fue inaugurado
+                    el 30 de marzo de
+                    1970. Esta nueva institución educativa, el CEB "Tiburcio Carías Andino", nació con el propósito de
+                    ofrecer una educación
+                    de calidad y ha cumplido 51 años de historia, siendo testigo del esfuerzo conjunto de maestros,
+                    padres de familia y la
+                    comunidad en la construcción de un futuro educativo sólido. Las fotos de Tom Isom y del propio CEB
+                    "Tiburcio Carías
+                    Andino" son testimonios visuales de este viaje educativo significativo.
+                </p>
+            </div>
+        </section>
+    </main>
+    {{>footer}}
+</body>
+
+</html>

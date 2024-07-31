@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEB Tiburcio Carias Andino</title>
+  <link rel="icon" href="./CentroBasico/imagenes/Logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./less/estilos.less" />
+  <script type="text/javascript" src="./js/nav.js"></script>
+</head>
+
+<body>
+  {{>header}}
+  <main>
+    <section class="contenedor">
+      <div class="box_conteiner centered-box">
+        <h1 class="titulos">Bienvenido a Nuestra Escuela</h1>
+      </div>
+      <div class="box_conteiner green-background">
+        {{>historia}}
+      </div>
+      <br>
+      {{>imgcarrusel}}
+      <script src="./js/carrusel.js"></script>
+      <h2 class="titulo">Noticias</h2>
+      <section class="card-container">
+        {{>card}}
+      </section>
+    </section>
+  </main>
+  {{>footer}}
+</body>
+
+</html>

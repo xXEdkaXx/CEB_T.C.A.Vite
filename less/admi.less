@@ -1,0 +1,113 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .contenedor {
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px #0000001a;
+  }
+  
+  h1, h2 {
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  form {
+    text-align: center;
+    padding: 30px;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 8px;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  input[type="tel"],
+  select, 
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  select {
+    appearance: none;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-size: 20px;
+  }
+  
+  textarea {
+    resize: horizontal;
+  }
+  
+  span.error {
+    display: none;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  footer {
+    text-align: auto;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .contenedor {
+      max-width: 100%;
+      padding: 20px;
+      box-shadow: none;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    label,
+    input,
+    select {
+      width: 100%;
+    }
+  
+    button {
+      padding: 10px;
+    }
+  
+    footer {
+      padding: 10px;
+    }
+  }
+  

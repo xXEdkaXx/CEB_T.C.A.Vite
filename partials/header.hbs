@@ -1,0 +1,42 @@
+<header class="header">
+    <div class="logo">
+        <a href="/index.html"><img src="/CentroBasico/imagenes/Logo.png" alt="Logo" /></a>
+    </div>
+    <nav>
+
+        <ul class="nav-link">
+            <li>
+                <a href="/CEB_T.C.A.Vite/page/acercade.html">Acerca de</a>
+                <ul class="submenu">
+                    {{#each subMenu}}
+                    <li><a href="{{url}}">{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </li>
+            {{#each navegacion}}
+            <li><a href="{{url}}">{{name}}</a></li>
+            {{/each}}
+        </ul>
+    </nav>
+    <a href="/CEB_T.C.A.Vite/page/contacto.html" class="btn"><button>Contacto</button></a>
+
+    <a href="#" onclick="openNav()" class="menu"><button>Menu</button></a>
+
+    <div class="overlay" id="mobile-menu">
+        <a href="#" onclick="closeNav()" class="close">&times;</a>
+        <div class="overlay-content">
+            {{#each mobileMenu}}
+            <a href="{{url}}">{{name}}</a>
+            {{/each}}
+            {{!-- Diferencia de tamano al usar hander --}}
+            {{!-- <a href="./html/quienessomos.html">¿Quiénes Somos?</a>
+            <a href="./html/valores.html">Valores</a>
+            <a href="./html/galeria.html">Galería</a>
+            <a href="./html/propuestas.html">Propuestas</a>
+            <a href="./html/biblioteca.html">Biblioteca</a>
+            <a href="./html/noticias.html">Noticias</a>
+            <a href="./html/admisiones.html">Admisiones</a>
+            <a href="./html/contacto.html">Contacto</a> --}}
+        </div>
+    </div>
+</header>

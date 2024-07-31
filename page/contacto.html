@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" href="{{logo}}" type="image/x-icon">
+    <link rel="stylesheet" href="../less/estilos.less" />
+    <script type="text/javascript" src="../js/nav.js"></script>
+</head>
+
+<body>
+    {{>header}}
+    <main>
+        <section class="contenedor">
+            <div style="display: block;" class="box_conteiner">
+                <h1 class="titulos">Nuestra Ubicación</h1><br>
+                <p class="parrafo">Aquí puedes encontrar nuestra dirección y un mapa para llegar:</p>
+            </div>
+            <div class="mapa-contenido" id="mapa">
+                <!-- Iframe se cargará mediante JavaScript -->
+            </div>
+        </section>
+
+    </main>
+    {{>footer}}
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var mapaContenedor = document.getElementById('mapa');
+            var iframe = document.createElement('iframe');
+            iframe.src = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d24529.119274798588!2d-87.99169251510124!3d14.47929142291324!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f65badb45a668f7%3A0x6ae5fea94c93e1fa!2sCEB%20Tiburcio%20Carias%20Andino!5e0!3m2!1ses-419!2shn!4v1701756760897!5m2!1ses-419!2shn";
+            iframe.width = "600";
+            iframe.height = "500";
+            iframe.style.border = "0";
+            iframe.allowFullscreen = "";
+            iframe.referrerPolicy = "no-referrer-when-downgrade";
+            mapaContenedor.appendChild(iframe);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{{#each tipoGaleria}}
+<section id="{{name}}">
+    <div class="box_conteiner">
+        <h2 class="titulo">{{name}}</h2>
+    </div>
+    <section class="image-container">
+        {{#filtrarPorTipo ../galeriaImg name}}
+        <div class="image">
+            <img src="{{src}}" alt="{{alt}}" />
+        </div>
+        {{/filtrarPorTipo}}
+    </section>
+
+</section>
+{{/each}}
