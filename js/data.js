@@ -1,4 +1,4 @@
-export var Ruta = "/CEB_T.C.A.Vite/"
+export var Ruta = "https://xxedkaxx.github.io/CEB_T.C.A.Vite/"
 export const RutaImg = "/CentroBasico/imagenes/"
 export const navegacion = [{
     name: "Propuestas",
