@@ -38,6 +38,18 @@ export default defineConfig(
                     const contextVariable = getPageContext(pagePath);
                     console.log(contextVariable);
                     return contextVariable;
+                },
+                helpers: {
+                    // Helper personalizado para filtrar imágenes por tipo
+                    filtrarPorTipo: function (imagenes, tipo, options) {
+                        var result = '';
+                        imagenes.forEach(function (imagen) {
+                            if (imagen.tipo === tipo) {
+                                result += options.fn(imagen);
+                            }
+                        });
+                        return result;
+                    }
                 }
             }),
             htmlPurge({}),
