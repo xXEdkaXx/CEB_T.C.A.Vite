@@ -1,9 +1,10 @@
-import { defineConfig } from 'vite'
-import * as glob from 'glob';
-import path, { resolve } from 'node:path';
-import { ViteMinifyPlugin } from 'vite-plugin-minify'
+import { defineConfig } from "vite";
+import * as glob from "glob";
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import htmlPurge from 'vite-plugin-purgecss';
+import path, { resolve } from "node:path";
 import handlebars from 'vite-plugin-handlebars';
+import getPageContext from './js';
 import handlerBarsContext from './variables.js';
 
 export default defineConfig(
@@ -29,11 +30,11 @@ export default defineConfig(
         plugins: [
             handlebars({
                 partialDirectory: resolve(__dirname, 'partials'), // Directorio de plantillas parciales de Handlebars
-                context: handlerBarsContext, // Contexto para las plantillas de Handlebars
-                order: 'pre', // Define el orden de ejecución de los plugins
-                handler: (content) => { // Personalización del contenido, si es necesario
-                    // Código de transformación, actualmente no modifica el contenido
-                    return content;
+                context: (pagePath) => {
+                    console.log(pagePath);
+                    const contextVariable = getPageContext(pagePath);
+                    console.log(contextVariable);
+                    return contextVariable;
                 },
                 helpers: {
                     // Helper personalizado para filtrar imágenes por tipo
