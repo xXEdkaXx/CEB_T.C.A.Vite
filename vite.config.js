@@ -8,7 +8,7 @@ import handlerBarsContext from './variables.js';
 
 export default defineConfig(
     {
-        appType: 'mpa',
+        appType: "mpa",
         base: "/CEB_T.C.A.Vite/",
         build: {
             rollupOptions: {
@@ -32,33 +32,16 @@ export default defineConfig(
         },
         plugins: [
             handlebars({
-                partialDirectory: resolve(__dirname, 'partials'), // Directorio de plantillas parciales de Handlebars
-                context: handlerBarsContext, // Contexto para las plantillas de Handlebars
-                order: 'pre', // Define el orden de ejecución de los plugins
-                handler: (content) => { // Personalización del contenido, si es necesario
-                    // Código de transformación, actualmente no modifica el contenido
-                    return content;
-                },
-                helpers: {
-                    // Helper personalizado para filtrar imágenes por tipo
-                    filtrarPorTipo: function (imagenes, tipo, options) {
-                        var result = '';
-                        imagenes.forEach(function (imagen) {
-                            if (imagen.tipo === tipo) {
-                                result += options.fn(imagen);
-                            }
-                        });
-                        return result;
-                    }
+                partialDirectory: resolve(__dirname, 'parciales'),
+                context: (pagePath) => {
+                    console.log(pagePath);
+                    const contextVariable = getPageContext(pagePath);
+                    console.log(contextVariable);
+                    return contextVariable;
                 }
             }),
-            htmlPurge({
-                // Opciones para purgar CSS no utilizado
-                content: ['./src/**/*.html'], // Archivos HTML a analizar para purga de CSS
-                safelist: ['safe-class'], // Clases CSS que deben mantenerse
-            }),
-            ViteMinifyPlugin({
-                // Opciones para la minificación de JavaScript y CSS
-            }),
-        ],
-    });
+            htmlPurge({}),
+            ViteMinifyPlugin()
+        ]
+    }
+);
