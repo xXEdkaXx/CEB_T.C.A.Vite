@@ -9,7 +9,7 @@ import handlerBarsContext from './variables.js';
 
 
 export default defineConfig({
-    base: "/CEB_T.C.A.Vite/",
+    base: "/https://xxedkaxx.github.io/CEB_T.C.A.Vite//",
     appType: 'mpa',
     build: {
         rollupOptions: {
